@@ -37,14 +37,15 @@
 						<li><a href="#colors">Colors</a></li>
 					</ul>
 					<div id="images">
-						<div id="badge_shapes" class="left">
 						<label>Badge</label><br>
+						<div id="badge_shapes">
 							<?php foreach(glob('./images/badges/*.*')as $filename): ?>
 								<img class="thumb" src="<?php echo $filename; ?>">
 							<?php endforeach; ?>
 						</div>
-						<div id="icon_shapes" class="left">
-							<label>Icon</label>
+						<br>
+						<label class="left">Icon</label><br>
+						<div class="left" id="icon_shapes">
 							<?php foreach(glob('./images/icons/*.*')as $filename): ?>
 								<img class="thumb" src="<?php echo $filename; ?>">
 							<?php endforeach; ?>

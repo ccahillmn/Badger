@@ -1,10 +1,14 @@
 /********************************************************************
 Global
 ********************************************************************/
+.clear{
+	clear:both;
+}
 .left{
 	float:left;
 	clear:both;
 	}
+
 
 /********************************************************************
 Inputs
@@ -39,6 +43,7 @@ header{
 #preview{
 	width:256px;
 	height:256px;
+	padding:0;
 }
 
 /********************************************************************
@@ -49,11 +54,15 @@ Content
 	margin-right: 20px;
 }
 
-#badge{
-	background: url(/images/badges/Seal_1.svg) no-repeat top left;
+
+#badge, #icon{
+	background: no-repeat center center;
 	background-size: 254px 254px;
-	width:100%;
-	height:100%;
+	width:254px;
+	height:254px;
+	position:absolute;
+	top:0;
+	margin:auto;
 }
 
 .thumb{

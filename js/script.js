@@ -12,11 +12,11 @@ $('.thumb').click(function() {
 	if (type == 'badge_shapes'){
 		var layer = '#badge';
 	}
-	else if (collection == 'icon_shapes'){
+	else if (type == 'icon_shapes'){
 		var layer = '#icon';
 	}
 
-	// Change the background image of the canvas
+	// Change the background image of the badge
 	$(layer).css('background-image', 'url(' + new_shape + ')');
 
 });
