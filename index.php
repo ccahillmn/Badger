@@ -12,7 +12,6 @@
 	<!-- Javascript -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/js/scripts.js"></script>
 	<script type="text/javascript" src="/js/jscolor/jscolor.js"></script>
 	
 	<!-- jQuery UI tabs -->
@@ -26,7 +25,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>Badger the Badge Maker<img src="/images/logo.png"></h1>
+			<h1>Badger the Badge Maker<img id="logo" src="/images/logo.png"></h1>
 			<p id="desc">Create badge images perfectly sized for Mozilla Open Badges<p>
 		</header>
 		<div class="row">
@@ -38,13 +37,13 @@
 						<li><a href="#colors">Colors</a></li>
 					</ul>
 					<div id="images">
-						<div class="col-sm-12">
+						<div id="badge_shapes" class="left">
 						<label>Badge</label><br>
 							<?php foreach(glob('./images/badges/*.*')as $filename): ?>
 								<img class="thumb" src="<?php echo $filename; ?>">
 							<?php endforeach; ?>
 						</div>
-						<div class="col-sm-12">
+						<div id="icon_shapes" class="left">
 							<label>Icon</label>
 							<?php foreach(glob('./images/icons/*.*')as $filename): ?>
 								<img class="thumb" src="<?php echo $filename; ?>">
@@ -98,5 +97,6 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>
