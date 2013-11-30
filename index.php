@@ -4,22 +4,24 @@
 	<title>Badger - Create custom badge images for use with Mozilla Open Badges</title>
 	
 	<!-- Style -->
-	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="/css/bootstrap-theme.css" type="text/css">
-	<link rel="stylesheet" href="/css/jquery-ui-1.10.3.custom.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	
 	<!-- Javascript -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.als-1.2.min.js"></script>
 	<script type="text/javascript" src="/js/jscolor/jscolor.js"></script>
 	
 	<!-- jQuery UI tabs -->
 	<script>
 	  $(function() {
-		$( "#generator" ).tabs();
+		$( "#generator" ).tabs({active:0});
 	  });
 	</script>
+
+
 	
 </head>
 <body>
@@ -30,27 +32,43 @@
 		</header>
 		<div class="row">
 			<div class="col-md-8">
-				<div id="generator">
-					<ul>
+				<div id="generator" class="panel">
+					<ul class="nav nav-tabs">
 						<li><a href="#images">Images</a></li>
 						<li><a href="#text">Text</a></li>
 						<li><a href="#colors">Colors</a></li>
 					</ul>
-					<div id="images">
+
+                    <!-- Image Selector-->
+					<div id="images" class="tab-content">
 						<label>Badge</label><br>
-						<div id="badge_shapes">
-							<?php foreach(glob('./images/badges/*.*')as $filename): ?>
-								<img class="thumb" src="<?php echo $filename; ?>">
-							<?php endforeach; ?>
-						</div>
+                        <div id="badges" class="als-container">
+                            <span class="als-prev glyphicon glyphicon-chevron-left"></span>
+                            <div class="als-viewport" id="badge_shapes">
+                                <ul class="als-wrapper">
+                                    <?php foreach(glob('./images/badges/*.*')as $filename): ?>
+                                            <li class="als-item"><img class="thumb" src="<?php echo $filename; ?>"></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <span class="als-next glyphicon glyphicon-chevron-right"></span>
+                        </div>
+				    </div>
 						<br>
 						<label class="left">Icon</label><br>
-						<div class="left" id="icon_shapes">
-							<?php foreach(glob('./images/icons/*.*')as $filename): ?>
-								<img class="thumb" src="<?php echo $filename; ?>">
-							<?php endforeach; ?>
+						<div id="icons" class="als-container">
+                            <span class="als-prev glyphicon glyphicon-chevron-left"></span>
+                            <div class="als-viewport" id="icon_shapes">
+                                <ul class="als-wrapper">
+                                    <?php foreach(glob('./images/icons/*.*')as $filename): ?>
+                                        <li class="als-item"><img class="thumb" src="<?php echo $filename; ?>"></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <span class="als-next glyphicon glyphicon-chevron-right"></span>
 						</div>
-					</div>
+
+                    <!-- Text Selector-->
 					<div id="text">
 						<label for="toptext" class="col-sm-3 control-label">Top</label>
 						<div class="col-sm-7">
@@ -65,6 +83,8 @@
 							<input id="bottomtext" class="form-control"><br>
 						</div>
 					</div>
+
+                    <!-- Color Selector-->
 					<div id="colors">
 						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
 						<div class="col-sm-7">
@@ -82,7 +102,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div id="preview" class="ui-widget ui-widget-content ui-corner-all">
+				<div id="preview" class="well">
 					<div id="badge" class="layer">
 					</div>
 					<div id="icon" class="layer">
@@ -98,6 +118,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="/js/script.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
 </html>

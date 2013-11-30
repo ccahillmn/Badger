@@ -4,10 +4,7 @@ Global
 .clear{
 	clear:both;
 }
-.left{
-	float:left;
-	clear:both;
-	}
+
 
 
 /********************************************************************
@@ -35,11 +32,6 @@ header{
 	min-height:256px;
 }
 
-#generator > div{
-	margin:30px 0;
-	padding:0;
-}
-	
 #preview{
 	width:256px;
 	height:256px;
@@ -65,9 +57,56 @@ Content
 	margin:auto;
 }
 
-.thumb{
-	width:75px;
-	height:75px;
-	float:left;
-	margin-right:8px;
+/*************************************
+ * generic styling for ALS elements
+ ************************************/
+
+.als-container {
+	position: relative;
+	width: 100%;
+	margin: 0px auto;
+	z-index: 0;
 }
+
+.als-viewport {
+	position: relative;
+	overflow: hidden;
+	margin: 0px auto;
+    padding:0;
+}
+
+.als-wrapper {
+	list-style: none;
+    padding:0;
+}
+
+.als-item {
+	text-align: center;
+	cursor: pointer;
+	float: left;
+    margin-right:8px;
+    min-height:75px;
+    min-width:75px;
+}
+
+.als-prev, .als-next {
+	position: absolute;
+	cursor: pointer;
+	clear: both;
+    top:30px;
+}
+
+.als-prev {
+	left: 30px;
+}
+
+.als-next {
+	right: 30px;
+}
+
+.thumb{
+    width:100px;
+    height:100px;
+}
+
+
