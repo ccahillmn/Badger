@@ -32,12 +32,45 @@ $('.thumb').click(function() {
 /*-------------------------------------------------------------------------------------------------
 Text input
 -------------------------------------------------------------------------------------------------*/
-
 $('.text').keyup(function(){
     
-    var location = '#' + $(this).parent().attr('id') + '_text';
+    // Get user input
+	var text = $(this).val();
+    var section = '#' + $(this).closest('div').attr('id');
+    var length = text.length;
+    var count = 24-length;
     
-    $(location).html($(this).val());
+    // Show error if too long
+    if (length >= 25){
+        $(section).addClass('has-error').removeClass('has-warning');
+        $(section + '_error').html('<strong>' + count + '</strong> Your text is too long').addClass('text-danger').removeClass('text-warning');
+    }
+    else {
+        // Else hide error
+        
+        $(section + '_error').html('<strong>' + count + '</strong> characters left')
+        
+        // Show warning when close to limit
+        if(length > 19){
+            $(section).addClass('has-warning').removeClass('has-error');
+            $(section + '_error').addClass('text-warning').removeClass('text-danger');
+            
+            $(this).blur(function() {
+                $(section).removeClass('has-warning has-error');
+                $(section + '_error').removeClass('text-warning text-danger');
+            });
+        }
+        else{
+            $(section).removeClass('has-warning has-error');
+            $(section + '_error').removeClass('text-warning text-danger');
+        }
+        
+        // Get text location
+        var location = section + '_text';
+        
+        // Insert text onto badge
+        $(location).html(text);
+    }
     
 });
 
@@ -50,7 +83,7 @@ $('.color').change(function() {
 	var new_color = $(this).val();
 
 	// Get item to change
-	var item = $(this).parent().attr('id');
+	var item = $(this).closest('div').attr('id');
 
     if (item == 'top'||'mid'||'bottom'){
         $('#' + item + '_text').css('color', new_color);

@@ -70,27 +70,43 @@
                     
                     <!-- Text Selector-->
 					<div id="text">
-						<label class="col-sm-3 control-label">Top</label>
-						<div id="top" class="col-sm-7">
-							<input class="form-control text"><br>
-                            <input class="form-control color {hash:true,caps:false}"><br>
-						</div>
-						<label class="col-sm-3 control-label">Middle</label>
-						<div id="mid" class="col-sm-7">
-							<input class="form-control text"><br>
-                            <input class="form-control color {hash:true,caps:false}"><br>
-						</div>
-						<label for="bottom" class="col-sm-3 control-label">Bottom</label>
-						<div id="bottom" class="col-sm-7">
-							<input class="form-control text"><br>
-                            <input class="form-control color {hash:true,caps:false}"><br>
-						</div>
+                        <label class="control-label">Top Text</label>
+                        <div id="top" class="row">
+                            <span class="col-md-5">
+                                <input class="form-control text" placeholder="Type your text here...">
+                            </span>
+                            <span class="col-md-7">
+                                <input class="color {hash:true,caps:false}">
+                            </span>
+                        </div>
+                        <span id="top_error">24 characters left</span>
+                        <hr>
+						<label class="control-label">Middle Text</label>
+                        <div id="mid" class="row">
+                            <span class="col-md-5">
+                                <input class="form-control text" placeholder="Type your text here...">
+                            </span>
+                            <span class="col-md-7">
+                                <input class="color {hash:true,caps:false}">
+                            </span>
+                        </div>
+                        <span id="mid_error">24 characters left</span>
+                        <hr>
+						<label class="control-label">Bottom Text</label>
+                        <div id="bottom" class="row">
+                            <span class="col-md-5">
+                                <input class="form-control text" placeholder="Type your text here...">
+                            </span>
+                            <span class="col-md-7">
+                                <input class="color {hash:true,caps:false}">
+                            </span>
+                        </div>
+                        <span id="bottom_error">24 characters left</span>
 					</div>
 
                     <!-- Color Selector-->
 					<div id="colors">
-						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
-						<div class="col-sm-7">
+						<div class>
 							<input id="bbgcolor" class="form-control color {hash:true,caps:false}"><br>
 						</div>
 						<label for="badgecolor" class="col-sm-3 control-label">Badge</label>
