@@ -11,7 +11,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.als-1.2.min.js"></script>
+    <script src="/js/jquery.alsEN-1.2.js"></script>
 	<script type="text/javascript" src="/js/jscolor/jscolor.js"></script>
 	
 	<!-- jQuery UI tabs -->
@@ -40,11 +40,11 @@
 					</ul>
 
                     <!-- Image Selector-->
-					<div id="images" class="tab-content">
+					<div id="images">
 						<label>Badge</label><br>
-                        <div id="badges" class="als-container">
+                        <div id="badge_shapes" class="als-container">
                             <span class="als-prev glyphicon glyphicon-chevron-left"></span>
-                            <div class="als-viewport" id="badge_shapes">
+                            <div class="als-viewport" >
                                 <ul class="als-wrapper">
                                     <?php foreach(glob('./images/badges/*.*')as $filename): ?>
                                             <li class="als-item"><img class="thumb" src="<?php echo $filename; ?>"></li>
@@ -69,17 +69,17 @@
                     </div>
                     <!-- Text Selector-->
 					<div id="text">
-						<label for="toptext" class="col-sm-3 control-label">Top</label>
+						<label for="top_input" class="col-sm-3 control-label">Top</label>
 						<div class="col-sm-7">
-							<input id="toptext" class="form-control"><br>
+							<input id="top" class="form-control"><br>
 						</div>
-						<label for="midtext" class="col-sm-3 control-label">Middle</label>
+						<label for="midtext_input" class="col-sm-3 control-label">Middle</label>
 						<div class="col-sm-7">
-							<input id="midtext" class="form-control"><br>
+							<input id="mid" class="form-control"><br>
 						</div>
-						<label for="bottomtext" class="col-sm-3 control-label">Bottom</label>
+						<label for="bottomtext_input" class="col-sm-3 control-label">Bottom</label>
 						<div class="col-sm-7">
-							<input id="bottomtext" class="form-control"><br>
+							<input id="bottom" class="form-control"><br>
 						</div>
 					</div>
 
@@ -108,10 +108,10 @@
 					</div>
 					<div id="ribbon" class="layer">
 					</div>
-					<div id="text" class="layer">
-						<p id="top"></p>
-						<p id="mid"></p>
-						<p id="bottom"></p>
+					<div id="texts" class="layer">
+						<p id="top_text"></p>
+						<p id="mid_text"></p>
+						<p id="bottom_text"></p>
 					</div>
 				</div>
 			</div>

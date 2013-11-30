@@ -38,6 +38,10 @@ header{
 	padding:0;
 }
 
+#generator > div{
+    padding:20px;
+}
+
 /********************************************************************
 Content
 ********************************************************************/
@@ -56,6 +60,22 @@ Content
 	top:0;
 	margin:auto;
 }
+
+#texts{
+    text-align:center;
+    height:256px;
+}
+
+#mid_text{
+    position:relative;
+    top:2em;
+}
+
+#bottom_text{
+    position:relative;
+    top:3em;
+}
+
 
 /*************************************
  * generic styling for ALS elements
