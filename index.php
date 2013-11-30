@@ -53,7 +53,6 @@
                             </div>
                             <span class="als-next glyphicon glyphicon-chevron-right"></span>
                         </div>
-				    </div>
 						<br>
 						<label class="left">Icon</label><br>
 						<div id="icons" class="als-container">
@@ -67,7 +66,7 @@
                             </div>
                             <span class="als-next glyphicon glyphicon-chevron-right"></span>
 						</div>
-
+                    </div>
                     <!-- Text Selector-->
 					<div id="text">
 						<label for="toptext" class="col-sm-3 control-label">Top</label>
