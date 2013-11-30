@@ -47,7 +47,7 @@
                             <div class="als-viewport" >
                                 <ul class="als-wrapper">
                                     <?php foreach(glob('./images/badges/*.*')as $filename): ?>
-                                            <li class="als-item"><img class="thumb" src="<?php echo $filename; ?>"></li>
+                                            <li class="als-item"><div class="badges"><img class="thumb" src="<?php echo $filename; ?>"></div></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -67,19 +67,23 @@
                             <span class="als-next glyphicon glyphicon-chevron-right"></span>
 						</div>
                     </div>
+                    
                     <!-- Text Selector-->
 					<div id="text">
-						<label for="top_input" class="col-sm-3 control-label">Top</label>
-						<div class="col-sm-7">
-							<input id="top" class="form-control"><br>
+						<label class="col-sm-3 control-label">Top</label>
+						<div id="top" class="col-sm-7">
+							<input class="form-control text"><br>
+                            <input class="form-control color {hash:true,caps:false}"><br>
 						</div>
-						<label for="midtext_input" class="col-sm-3 control-label">Middle</label>
-						<div class="col-sm-7">
-							<input id="mid" class="form-control"><br>
+						<label class="col-sm-3 control-label">Middle</label>
+						<div id="mid" class="col-sm-7">
+							<input class="form-control text"><br>
+                            <input class="form-control color {hash:true,caps:false}"><br>
 						</div>
-						<label for="bottomtext_input" class="col-sm-3 control-label">Bottom</label>
-						<div class="col-sm-7">
-							<input id="bottom" class="form-control"><br>
+						<label for="bottom" class="col-sm-3 control-label">Bottom</label>
+						<div id="bottom" class="col-sm-7">
+							<input class="form-control text"><br>
+                            <input class="form-control color {hash:true,caps:false}"><br>
 						</div>
 					</div>
 
@@ -102,12 +106,9 @@
 			</div>
 			<div class="col-md-4">
 				<div id="preview" class="well">
-					<div id="badge" class="layer">
-					</div>
-					<div id="icon" class="layer">
-					</div>
-					<div id="ribbon" class="layer">
-					</div>
+					<image id="badge" class="layer">
+					<image id="icon" class="layer">
+					<image id="ribbon" class="layer">
 					<div id="texts" class="layer">
 						<p id="top_text"></p>
 						<p id="mid_text"></p>

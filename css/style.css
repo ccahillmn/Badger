@@ -51,7 +51,7 @@ Content
 }
 
 
-#badge, #icon{
+#badge, #icon, #texts{
 	background: no-repeat center center;
 	background-size: 254px 254px;
 	width:254px;
@@ -61,19 +61,21 @@ Content
 	margin:auto;
 }
 
-#texts{
+#texts p{
     text-align:center;
-    height:256px;
+    height:33%;
+    width:256px;
+    padding:2em
 }
 
 #mid_text{
-    position:relative;
-    top:2em;
+    position:absolute;
+    top:6em;
 }
 
 #bottom_text{
-    position:relative;
-    top:3em;
+    position:absolute;
+    top:11em;
 }
 
 
