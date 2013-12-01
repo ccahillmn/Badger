@@ -34,6 +34,10 @@ $('.thumb').click(function() {
 
 });
 
+$('#icon').click(function(){
+    $('#icon').draggable().resizable({ handles: "n, e, s, w" });
+})
+
 
 /*-------------------------------------------------------------------------------------------------
 Text input
@@ -78,13 +82,17 @@ $('.text').keyup(function(){
         $(location).html(text);
     }
     
+    $('#preview p').click().draggable();
+    
 });
 
 /*-------------------------------------------------------------------------------------------------
 Color chooser
 -------------------------------------------------------------------------------------------------*/
+
+// Init shape colors
 var badge_color = '#000';
-var icon_color= '#000';
+var icon_color= '#999';
 
 $('.color').change(function() {
     

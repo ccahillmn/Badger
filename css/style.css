@@ -50,7 +50,7 @@ Content
 }
 
 
-#badge, #icon, #texts{
+#badge, #texts{
 	background: no-repeat center center;
 	background-size: 254px 254px;
 	width:254px;
@@ -60,11 +60,20 @@ Content
 	margin:auto;
 }
 
-#texts p{
+#icon{
+    width:100px;
+    height:100px;
+    margin:75px;
+    position:absolute;
+    z-index:99;
+}
+
+#preview p{
     text-align:center;
-    height:33%;
-    width:256px;
-    padding:5px;
+    width:254px;
+    margin-top:2em;
+    position:absolute;
+    z-index:100;
 }
 
 #mid_text{
@@ -80,6 +89,8 @@ Content
 #text .form-control{
     margin:5px 0;
 }
+
+
 
 
 /*************************************

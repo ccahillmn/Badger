@@ -4,8 +4,10 @@
 	<title>Badger - Create custom badge images for use with Mozilla Open Badges</title>
 	
 	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
+	
 	
 	<!-- Javascript -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -127,11 +129,9 @@
 				<div id="preview" class="well">
 					<div id="badge" class="layer"></div>
 					<div id="icon" class="layer"></div>
-					<div id="texts" class="layer">
-						<p id="top_text"></p>
-						<p id="mid_text"></p>
-						<p id="bottom_text"></p>
-					</div>
+					<p id="top_text"></p>
+					<p id="mid_text"></p>
+					<p id="bottom_text"></p>
 				</div>
 			</div>
 		</div>
