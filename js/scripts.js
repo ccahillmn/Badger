@@ -15,16 +15,22 @@ $('.thumb').click(function() {
 
 	// Get chosen shape
 	var new_shape = $(this).html();
+	var layer;
+	var fill;
     
 	if ($(this).hasClass('badges')){
-		var layer = '#badge';
+		layer = '#badge';
+		fill = badge_color
 	}
 	else {
-		var layer = '#icon';
+		layer = '#icon';
+		fill = icon_color;
+
 	}
 	
 	// Update the image
 	$(layer).html(new_shape);
+	$(layer + ' .shape').css('fill', fill);
 
 });
 
@@ -77,6 +83,9 @@ $('.text').keyup(function(){
 /*-------------------------------------------------------------------------------------------------
 Color chooser
 -------------------------------------------------------------------------------------------------*/
+var badge_color = '#000';
+var icon_color= '#000';
+
 $('.color').change(function() {
     
 	// Get chosen color
@@ -99,11 +108,13 @@ $('.color').change(function() {
 			break;
 		
 		case 'badge_bg':
-			$('#badge .badge_bg').css('fill', new_color);
+			$('#badge .shape').css('fill', new_color);
+			badge_color = new_color;
 			break;
 		
 		case 'icon_bg':
-			$('#icon .icon_bg').css('fill', new_color);
+			$('#icon .shape').css('fill', new_color);
+			icon_color = new_color;
 			break;
 
 		case 'preview_bg':
