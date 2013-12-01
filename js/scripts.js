@@ -84,12 +84,31 @@ $('.color').change(function() {
 
 	// Get item to change
 	var item = $(this).closest('div').attr('id');
+	
+	switch (item) {
+		case 'top':
+			$('#top_text').css('color', new_color);
+			break;
+		
+		case 'mid':
+			$('#mid_text').css('color', new_color);
+			break;
+		
+		case 'bottom':
+			$('#bottom_text').css('color', new_color);
+			break;
+		
+		case 'badge_bg':
+			$('#badge .badge_bg').css('fill', new_color);
+			break;
+		
+		case 'icon_bg':
+			$('#icon .icon_bg').css('fill', new_color);
+			break;
 
-    if (item == 'top'||'mid'||'bottom'){
-        $('#' + item + '_text').css('color', new_color);
-    }
-    else{
-        $(item).css('fill', new_color);
-    }
+		case 'preview_bg':
+			$('#preview').css('background-color', new_color);
+			break;
+	}
 
 });

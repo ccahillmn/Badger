@@ -106,11 +106,12 @@
 
                     <!-- Color Selector-->
 					<div id="colors">
-						<div class>
+						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
+						<div id="preview_bg" class="col-sm-7" >
 							<input id="bbgcolor" class="form-control color {hash:true,caps:false}"><br>
 						</div>
 						<label for="badgecolor" class="col-sm-3 control-label">Badge</label>
-						<div class="col-sm-7">
+						<div id="badge_bg" class="col-sm-7">
 							<input id="badgecolor" class="form-control color {hash:true,caps:false}"><br>
 						</div>
 						<label for="iconcolor" class="col-sm-3 control-label">Icon</label>
@@ -126,7 +127,6 @@
 				<div id="preview" class="well">
 					<div id="badge" class="layer"></div>
 					<div id="icon" class="layer"></div>
-					<div id="ribbon" class="layer"></div>
 					<div id="texts" class="layer">
 						<p id="top_text"></p>
 						<p id="mid_text"></p>
