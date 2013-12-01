@@ -115,7 +115,7 @@
 							<input id="badgecolor" class="form-control color {hash:true,caps:false}"><br>
 						</div>
 						<label for="iconcolor" class="col-sm-3 control-label">Icon</label>
-						<div class="col-sm-7">
+						<div id="icon_bg" class="col-sm-7">
 							<input id="iconcolor" class="form-control color {hash:true,caps:false}"><br>
 						</div>
 					</div>
