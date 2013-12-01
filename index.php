@@ -47,7 +47,7 @@
                             <div class="als-viewport" >
                                 <ul class="als-wrapper">
                                     <?php foreach(glob('./images/badges/*.*')as $filename): ?>
-                                            <li class="als-item"><div class="badges"><img class="thumb" src="<?php echo $filename; ?>"></div></li>
+                                            <li class="als-item"><div class="thumb badges"><?php include($filename); ?></div></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -60,7 +60,7 @@
                             <div class="als-viewport" id="icon_shapes">
                                 <ul class="als-wrapper">
                                     <?php foreach(glob('./images/icons/*.*')as $filename): ?>
-                                        <li class="als-item"><img class="thumb" src="<?php echo $filename; ?>"></li>
+                                        <li class="als-item"><div class="thumb icons"><?php include($filename); ?></div></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -120,11 +120,13 @@
 					</div>
 				</div>
 			</div>
+			
+			<!-- Badge Preview-->
 			<div class="col-md-4">
 				<div id="preview" class="well">
-					<image id="badge" class="layer">
-					<image id="icon" class="layer">
-					<image id="ribbon" class="layer">
+					<div id="badge" class="layer"></div>
+					<div id="icon" class="layer"></div>
+					<div id="ribbon" class="layer"></div>
 					<div id="texts" class="layer">
 						<p id="top_text"></p>
 						<p id="mid_text"></p>

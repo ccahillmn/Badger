@@ -14,17 +14,17 @@ $(document).ready(function(){
 $('.thumb').click(function() {
 
 	// Get chosen shape
-	var new_shape = $(this).attr('src');
+	var new_shape = $(this).html();
     
-	if ($(this).closest('div').hasClass('badges')){
+	if ($(this).hasClass('badges')){
 		var layer = '#badge';
 	}
 	else {
 		var layer = '#icon';
 	}
-
-	// Update the badge image
-	$(layer).attr('src', new_shape);
+	
+	// Update the image
+	$(layer).html(new_shape);
 
 });
 
