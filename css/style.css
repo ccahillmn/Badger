@@ -6,6 +6,7 @@ Global
 }
 
 
+
 /********************************************************************
 Inputs
 ********************************************************************/
@@ -31,10 +32,14 @@ header{
 	min-height:256px;
 }
 
-#preview{
+.panel{
 	width:256px;
-	height:256px;
-	padding:0;
+}
+
+#preview{
+	width:254px;
+	height:276px;
+	border-radius:0 0 4px 4px;
 }
 
 #generator > div{
@@ -56,7 +61,7 @@ Content
 	width:254px;
 	height:254px;
 	position:absolute;
-	top:0;
+	top:49px;
 	margin:auto;
 }
 
@@ -71,19 +76,23 @@ Content
 #preview p{
     text-align:center;
     width:254px;
-    margin-top:2em;
     position:absolute;
     z-index:100;
 }
 
-#mid_text{
+#top_text{
     position:absolute;
     top:5em;
 }
 
-#bottom_text{
+#mid_text{
     position:absolute;
     top:10em;
+}
+
+#bottom_text{
+    position:absolute;
+    top:15em;
 }
 
 #text .form-control{
@@ -91,58 +100,31 @@ Content
 }
 
 
-
-
 /*************************************
- * generic styling for ALS elements
+jquery resize elements
  ************************************/
 
-.als-container {
-	position: relative;
-	width: 100%;
-	margin: 0px auto;
-	z-index: 0;
-}
+.ui-icon { width: 16px; height: 16px; background-image: url(http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/images/ui-icons_222222_256x240.png)/*{iconsContent}*/; }
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block;}
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0px; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0px; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0px; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0px; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
 
-.als-viewport {
-	position: relative;
-	overflow: hidden;
-	margin: 0px auto;
-    padding:0;
-}
 
-.als-wrapper {
-	list-style: none;
-    padding:0;
-}
 
-.als-item {
-	text-align: center;
-	cursor: pointer;
-	float: left;
-    margin-right:8px;
-    min-height:75px;
-    min-width:75px;
-}
-
-.als-prev, .als-next {
-	position: absolute;
-	cursor: pointer;
-	clear: both;
-    top:30px;
-}
-
-.als-prev {
-	left: 30px;
-}
-
-.als-next {
-	right: 30px;
-}
 
 .thumb{
     width:100px;
     height:100px;
 }
+
 
 

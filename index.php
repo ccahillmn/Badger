@@ -4,7 +4,6 @@
 	<title>Badger - Create custom badge images for use with Mozilla Open Badges</title>
 	
 	<!-- Style -->
-	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	
@@ -12,9 +11,8 @@
 	<!-- Javascript -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.alsEN-1.2.js"></script>
 	<script type="text/javascript" src="/js/jscolor/jscolor.js"></script>
+	<script type="text/javascript" src="/js/jquery.carouFredSel-6.2.1-packed.js"></script>
 	
 	<!-- jQuery UI tabs -->
 	<script>
@@ -22,8 +20,6 @@
 		$( "#generator" ).tabs({active:0});
 	  });
 	</script>
-
-
 	
 </head>
 <body>
@@ -34,7 +30,7 @@
 		</header>
 		<div class="row">
 			<div class="col-md-8">
-				<div id="generator" class="panel">
+				<div id="generator">
 					<ul class="nav nav-tabs">
 						<li><a href="#images">Images</a></li>
 						<li><a href="#text">Text</a></li>
@@ -44,31 +40,24 @@
                     <!-- Image Selector-->
 					<div id="images">
 						<label>Badge</label><br>
-                        <div id="badge_shapes" class="als-container">
-                            <span class="als-prev glyphicon glyphicon-chevron-left"></span>
-                            <div class="als-viewport" >
-                                <ul class="als-wrapper">
-                                    <?php foreach(glob('./images/badges/*.*')as $filename): ?>
-                                            <li class="als-item"><div class="thumb badges"><?php include($filename); ?></div></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                            <span class="als-next glyphicon glyphicon-chevron-right"></span>
-                        </div>
+						<span id="prev" class="glyphicon glyphicon-chevron-left"></span>
+                        <div id="BadgePicker" class="picker">
+							<?php foreach(glob('./images/badges/*.*')as $filename): ?>
+									<div class="thumb badges"><?php include($filename); ?></div>
+							<?php endforeach; ?>
+						</div>
+						<span id="next" class="glyphicon glyphicon-chevron-right"></span>
 						<br>
 						<label class="left">Icon</label><br>
-						<div id="icons" class="als-container">
-                            <span class="als-prev glyphicon glyphicon-chevron-left"></span>
-                            <div class="als-viewport" id="icon_shapes">
-                                <ul class="als-wrapper">
-                                    <?php foreach(glob('./images/icons/*.*')as $filename): ?>
-                                        <li class="als-item"><div class="thumb icons"><?php include($filename); ?></div></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                            <span class="als-next glyphicon glyphicon-chevron-right"></span>
+						<span id="prev2" class="glyphicon glyphicon-chevron-left"></span>
+                        <div id="IconPicker" class="picker">
+							<?php foreach(glob('./images/icons/*.*')as $filename): ?>
+									<div class="thumb icons"><?php include($filename); ?></div>
+							<?php endforeach; ?>
 						</div>
-                    </div>
+						<span id="next2" class="glyphicon glyphicon-chevron-right"></span>
+					</div>
+
                     
                     <!-- Text Selector-->
 					<div id="text">
@@ -110,28 +99,33 @@
 					<div id="colors">
 						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
 						<div id="preview_bg" class="col-sm-7" >
-							<input id="bbgcolor" class="form-control color {hash:true,caps:false}"><br>
+							<input id="bbgcolor" class="form-control color {hash:true}" value="ffffff"><br>
 						</div>
 						<label for="badgecolor" class="col-sm-3 control-label">Badge</label>
 						<div id="badge_bg" class="col-sm-7">
-							<input id="badgecolor" class="form-control color {hash:true,caps:false}"><br>
+							<input id="badgecolor" class="form-control color {hash:true}" value="c32b40"><br>
 						</div>
 						<label for="iconcolor" class="col-sm-3 control-label">Icon</label>
 						<div id="icon_bg" class="col-sm-7">
-							<input id="iconcolor" class="form-control color {hash:true,caps:false}"><br>
+							<input id="iconcolor" class="form-control color {hash:true}" value="000000"><br>
 						</div>
 					</div>
 				</div>
 			</div>
 			
 			<!-- Badge Preview-->
-			<div class="col-md-4">
-				<div id="preview" class="well">
-					<div id="badge" class="layer"></div>
-					<div id="icon" class="layer"></div>
-					<p id="top_text"></p>
-					<p id="mid_text"></p>
-					<p id="bottom_text"></p>
+			<div class="col-md-4 ">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">Preview</h2>
+					</div>
+					<div id="preview">
+						<div id="badge" class="layer"></div>
+						<div id="icon" class="layer"></div>
+						<p id="top_text"></p>
+						<p id="mid_text"></p>
+						<p id="bottom_text"></p>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,15 +1,47 @@
 /*-------------------------------------------------------------------------------------------------
 Image chooser
 -------------------------------------------------------------------------------------------------*/
-$(document).ready(function(){
-    $(".als-container").als({
-        visible_items: 4,
-        scrolling_items: 4,
-        orientation: "horizontal",
-        circular: "no",
-        autoscroll: "no"
-    });
+$("#BadgePicker").carouFredSel({
+	circular: false,
+	infinite: false,
+	height: "auto",
+	items: {
+		visible: 4,
+		minimum: 5,
+		width: 100,
+		height: 100
+	},
+	auto: false,
+	prev: {
+		button: "#prev",
+		key: "left"
+	},
+	next: {
+		button: "#next",
+		key: "right"
+	}
 });
+$("#IconPicker").carouFredSel({
+	circular: false,
+	infinite: false,
+	height: "auto",
+	items: {
+		visible: 4,
+		minimum: 5,
+		width: 100,
+		height: 100
+	},
+	auto: false,
+	prev: {
+		button: "#prev2",
+		key: "left"
+	},
+	next: {
+		button: "#next2",
+		key: "right"
+	}
+});
+
 
 $('.thumb').click(function() {
 
@@ -25,7 +57,8 @@ $('.thumb').click(function() {
 	else {
 		layer = '#icon';
 		fill = icon_color;
-
+		
+		$('#icon').css('cursor','move').draggable();
 	}
 	
 	// Update the image
@@ -33,10 +66,7 @@ $('.thumb').click(function() {
 	$(layer + ' .shape').css('fill', fill);
 
 });
-
-$('#icon').click(function(){
-    $('#icon').draggable().resizable({ handles: "n, e, s, w" });
-})
+    
 
 
 /*-------------------------------------------------------------------------------------------------
@@ -80,9 +110,11 @@ $('.text').keyup(function(){
         
         // Insert text onto badge
         $(location).html(text);
+		
+		$(location).css('cursor','move').draggable();
     }
     
-    $('#preview p').click().draggable();
+
     
 });
 
@@ -91,8 +123,8 @@ Color chooser
 -------------------------------------------------------------------------------------------------*/
 
 // Init shape colors
-var badge_color = '#000';
-var icon_color= '#999';
+var badge_color = '#c32b40';
+var icon_color= '#000';
 
 $('.color').change(function() {
     
