@@ -24,6 +24,30 @@ $( document ).ready(function() {
 			}
 		},
 	});
+	
+	$("#resize").slider({
+		value: 150,
+		max: 250,
+		min: 0,
+		slide: function(event, ui) {
+			$( "#icon" ).width(ui.value);
+			$( "#icon" ).height(ui.value);
+	   }
+	});
+	
+	$("#rotate").slider({
+		value: 0,
+		max: 180,
+		min: -180,
+		slide: function(event, ui) {
+			$( "#icon" ).css({ 
+				'WebkitTransform': 'rotate(' + ui.value + 'deg)',
+				 '-moz-transform': 'rotate(' + ui.value + 'deg)',
+				 '-ms-transform':'rotate('+ ui.value +'deg)',
+			});
+		}
+	});
+	
 });
 
 
@@ -42,7 +66,7 @@ $('.thumb').click(function() {
 		layer = '#icon';
 		fill = icon_color;
 		
-		$('#icon').css('cursor','move').draggable();
+		$('#icon').css('cursor','move').draggable({ containment: "parent" });
 	}
 	
 	// Update the image
@@ -95,7 +119,7 @@ $('.text').keyup(function(){
         // Insert text onto badge
         $(location).html(text);
 		
-		$(location).css('cursor','move').draggable();
+		$(location).css('cursor','move').draggable({ containment: "parent" });
     }
     
 

@@ -4,7 +4,8 @@
 	<title>Badger - Create custom badge images for use with Mozilla Open Badges</title>
 	
 	<!-- Style -->
-    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css">
+	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	
 	
@@ -16,9 +17,11 @@
 	
 	<!-- jQuery UI tabs -->
 	<script>
-	  $(function() {
-		$( "#generator" ).tabs({active:0});
-	  });
+	  // intialize tabs and slider
+		$(function(){
+			$( ".slider" ).slider();
+			$( "#generator" ).tabs({active:0});
+		});
 	</script>
 	
 </head>
@@ -33,8 +36,8 @@
 				<div id="generator">
 					<ul class="nav nav-tabs">
 						<li><a href="#images">Images</a></li>
-						<li><a href="#text">Text</a></li>
 						<li><a href="#colors">Colors</a></li>
+						<li><a href="#text">Text</a></li>
 					</ul>
 
                     <!-- Image Selector-->
@@ -49,7 +52,6 @@
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
 						</div>
-						<br>
 						<div class="wrapper clear">
 							<label>Icon</label><br>
 							<span class="prev glyphicon glyphicon-chevron-left"></span>
@@ -59,47 +61,18 @@
 								<?php endforeach; ?>
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
+							<div class="col-md-6">
+								<p>Resize</p>
+								<div id="resize" class="slider"></div>
+							</div>
+							<div class="col-md-6">
+								<p>Rotate</p>
+								<div id="rotate" class="slider"></div>
+							</div>
 						</div>
 					</div>
-
-                    
-                    <!-- Text Selector-->
-					<div id="text">
-                        <label class="control-label">Top Text</label>
-                        <div id="top" class="row">
-                            <span class="col-md-5">
-                                <input class="form-control text" placeholder="Type your text here...">
-                            </span>
-                            <span class="col-md-7">
-                                <input class="color {hash:true,caps:false}">
-                            </span>
-                        </div>
-                        <span id="top_error">24 characters left</span>
-                        <hr>
-						<label class="control-label">Middle Text</label>
-                        <div id="mid" class="row">
-                            <span class="col-md-5">
-                                <input class="form-control text" placeholder="Type your text here...">
-                            </span>
-                            <span class="col-md-7">
-                                <input class="color {hash:true,caps:false}">
-                            </span>
-                        </div>
-                        <span id="mid_error">24 characters left</span>
-                        <hr>
-						<label class="control-label">Bottom Text</label>
-                        <div id="bottom" class="row">
-                            <span class="col-md-5">
-                                <input class="form-control text" placeholder="Type your text here...">
-                            </span>
-                            <span class="col-md-7">
-                                <input class="color {hash:true,caps:false}">
-                            </span>
-                        </div>
-                        <span id="bottom_error">24 characters left</span>
-					</div>
-
-                    <!-- Color Selector-->
+					
+					<!-- Image Color Selector-->
 					<div id="colors">
 						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
 						<div id="preview_bg" class="col-sm-7" >
@@ -114,8 +87,45 @@
 							<input id="iconcolor" class="form-control color {hash:true}" value="000000"><br>
 						</div>
 					</div>
+
+                    
+                    <!-- Text Selector-->
+					<div id="text">
+                        <label class="control-label">Top Text</label>
+                        <div id="top" class="row">
+                            <span class="col-md-5">
+                                <input class="form-control text" placeholder="Type your text here...">
+                            </span>
+                            <span class="col-md-7">
+                                <input class="color {hash:true,caps:false}" value="2c3e50">
+                            </span>
+                        </div>
+                        <span id="top_error">24 characters left</span>
+                        <hr>
+						<label class="control-label">Middle Text</label>
+                        <div id="mid" class="row">
+                            <span class="col-md-5">
+                                <input class="form-control text" placeholder="Type your text here...">
+                            </span>
+                            <span class="col-md-7">
+                                <input class="color {hash:true,caps:false}" value="2c3e50">
+                            </span>
+                        </div>
+                        <span id="mid_error">24 characters left</span>
+                        <hr>
+						<label class="control-label">Bottom Text</label>
+                        <div id="bottom" class="row">
+                            <span class="col-md-5">
+                                <input class="form-control text" placeholder="Type your text here...">
+                            </span>
+                            <span class="col-md-7">
+                                <input class="color {hash:true,caps:false}" value="2c3e50">
+                            </span>
+                        </div>
+                        <span id="bottom_error">24 characters left</span>
+					</div>
 				</div>
-			</div>
+		</div>
 			
 			<!-- Badge Preview-->
 			<div class="col-md-4 ">

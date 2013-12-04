@@ -364,8 +364,7 @@ img {
 }
 
 hr {
-  margin-top: 21px;
-  margin-bottom: 21px;
+  margin: 21px -20px;
   border: 0;
   border-top: 1px solid #ecf0f1;
 }
