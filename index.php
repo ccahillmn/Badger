@@ -39,23 +39,27 @@
 
                     <!-- Image Selector-->
 					<div id="images">
-						<label>Badge</label><br>
-						<span id="prev" class="glyphicon glyphicon-chevron-left"></span>
-                        <div id="BadgePicker" class="picker">
-							<?php foreach(glob('./images/badges/*.*')as $filename): ?>
-									<div class="thumb badges"><?php include($filename); ?></div>
-							<?php endforeach; ?>
+						<div class="wrapper">
+							<label>Badge</label><br>
+							<span class="prev glyphicon glyphicon-chevron-left"></span>
+							<div id="BadgePicker" class="picker">
+								<?php foreach(glob('./images/badges/*.*')as $filename): ?>
+										<div class="thumb badges"><?php include($filename); ?></div>
+								<?php endforeach; ?>
+							</div>
+							<span class="next glyphicon glyphicon-chevron-right"></span>
 						</div>
-						<span id="next" class="glyphicon glyphicon-chevron-right"></span>
 						<br>
-						<label class="left">Icon</label><br>
-						<span id="prev2" class="glyphicon glyphicon-chevron-left"></span>
-                        <div id="IconPicker" class="picker">
-							<?php foreach(glob('./images/icons/*.*')as $filename): ?>
-									<div class="thumb icons"><?php include($filename); ?></div>
-							<?php endforeach; ?>
+						<div class="wrapper clear">
+							<label>Icon</label><br>
+							<span class="prev glyphicon glyphicon-chevron-left"></span>
+							<div id="IconPicker" class="picker">
+								<?php foreach(glob('./images/icons/*.*')as $filename): ?>
+										<div class="thumb icons"><?php include($filename); ?></div>
+								<?php endforeach; ?>
+							</div>
+							<span class="next glyphicon glyphicon-chevron-right"></span>
 						</div>
-						<span id="next2" class="glyphicon glyphicon-chevron-right"></span>
 					</div>
 
                     

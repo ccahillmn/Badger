@@ -2,22 +2,22 @@
 Global
 ********************************************************************/
 .clear{
+	float:none;
 	clear:both;
 }
-
-
-
-/********************************************************************
-Inputs
-********************************************************************/
 
 label{
 	text-align:right;
 }
 
+#logo{
+	float:left;
+	margin-right: 20px;
+}
+
 
 /********************************************************************
-Boxes
+Layout
 ********************************************************************/
 header{
 	min-height:128px;
@@ -47,13 +47,8 @@ header{
 }
 
 /********************************************************************
-Content
+Badge Content
 ********************************************************************/
-#logo{
-	float:left;
-	margin-right: 20px;
-}
-
 
 #badge, #texts{
 	background: no-repeat center center;
@@ -80,6 +75,7 @@ Content
     z-index:100;
 }
 
+
 #top_text{
     position:absolute;
     top:5em;
@@ -95,10 +91,32 @@ Content
     top:15em;
 }
 
+
+
+/********************************************************************
+Generator 
+********************************************************************/
+
+.thumb{
+    width:100px;
+    height:100px;
+	display:block;
+	float:left;
+}
+
+.picker, .prev, .next{
+	float:left;
+	}
+	
+.next, .prev{
+	top:40px;
+	margin:10px;
+	font-size:2em;
+}
+
 #text .form-control{
     margin:5px 0;
 }
-
 
 /*************************************
 jquery resize elements
@@ -121,10 +139,7 @@ jquery resize elements
 
 
 
-.thumb{
-    width:100px;
-    height:100px;
-}
+
 
 
 

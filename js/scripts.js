@@ -1,45 +1,29 @@
 /*-------------------------------------------------------------------------------------------------
 Image chooser
 -------------------------------------------------------------------------------------------------*/
-$("#BadgePicker").carouFredSel({
-	circular: false,
-	infinite: false,
-	height: "auto",
-	items: {
-		visible: 4,
-		minimum: 5,
-		width: 100,
-		height: 100
-	},
-	auto: false,
-	prev: {
-		button: "#prev",
-		key: "left"
-	},
-	next: {
-		button: "#next",
-		key: "right"
-	}
-});
-$("#IconPicker").carouFredSel({
-	circular: false,
-	infinite: false,
-	height: "auto",
-	items: {
-		visible: 4,
-		minimum: 5,
-		width: 100,
-		height: 100
-	},
-	auto: false,
-	prev: {
-		button: "#prev2",
-		key: "left"
-	},
-	next: {
-		button: "#next2",
-		key: "right"
-	}
+$( document ).ready(function() {
+	$(".picker").carouFredSel({
+		circular: false,
+		infinite: false,
+		height: "auto",
+		items: {
+			visible: 5,
+			minimum: 6,
+			width: 100,
+			height: 100
+		},
+		auto: false,
+		prev		: {
+			button		: function() {
+				return $(this).parents(".wrapper").find(".prev");
+			}
+		},
+		next		: {
+			button		: function() {
+				return $(this).parents(".wrapper").find(".next");
+			}
+		},
+	});
 });
 
 
