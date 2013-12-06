@@ -215,9 +215,33 @@ $("#reset").click(function() {
 	$("#rotate, .rotate").slider({value: 0});
 	
 	// Reset Colors
-	document.getElementById('colors_form').reset()
-	$("#Preview p").css('color','#2C3E50');
-	$('#preview').css('background-color', '#fff');
-	badge_color = '#c32b40';
-	icon_color= '#000';
+	$('.color').each(function(){
+	    
+	    var item = $(this).attr('id');
+	    
+        switch (item) {
+		case 'topcolor': case 'midcolor': case 'bottomcolor':
+			var defaultColor = '#2C3E50';
+			var textColor = '#fff';
+			$("#preview p").css('color',defaultColor);
+			break;
+		case 'badgecolor':
+			var defaultColor = '#C32B40';
+			var textColor = '#fff';
+			badge_color = defaultColor;
+			break;
+		case 'iconcolor':
+			var defaultColor = '#000000';
+			var textColor = '#fff';
+			icon_color = defaultColor;
+			break;
+		case 'bbgcolor':
+			var defaultColor = '#ffffff';
+			var textColor = '#000';
+			$('#preview').css('background-color', defaultColor);
+        }
+        $(this).val(defaultColor);
+        $(this).css('background-color',defaultColor);
+        $(this).css('color',textColor);
+	});
 });
