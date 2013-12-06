@@ -3,12 +3,13 @@ Initialize UI
 -------------------------------------------------------------------------------------------------*/
 $(document).ready(function(){
 
-	 // intialize tabs and slider UI
+	 // Intit tabs and slider UI
 	$(function(){
 		$( ".slider" ).slider();
 		$( "#generator" ).tabs({active:0});
 	});
-		
+	
+	// Init image carousels
 	$(".picker").carouFredSel({
 		circular: false,
 		infinite: false,
@@ -32,6 +33,7 @@ $(document).ready(function(){
 		},
 	});
 	
+	// Init icon resizer
 	$("#resize").slider({
 		value: 125,
 		max: 250,
@@ -42,7 +44,8 @@ $(document).ready(function(){
 	   }
 	});
 	
-	$("#rotate").slider({
+	// Init icon rotator
+	$("#icon_rotate").slider({
 		value: 0,
 		max: 180,
 		min: -180,
@@ -55,6 +58,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	// Init text rotators
     $( ".rotate").each(function() {
 	
 		var item = $(this).closest('div.row').attr('id');
@@ -85,6 +89,7 @@ $('.thumb').click(function() {
 	var layer;
 	var fill;
     
+	// Get element to update
 	if ($(this).hasClass('badges')){
 		layer = '#badge';
 		fill = badge_color
@@ -101,7 +106,6 @@ $('.thumb').click(function() {
 	$(layer + ' .shape').css('fill', fill);
 
 });   
-
 
 /*-------------------------------------------------------------------------------------------------
 Text input
@@ -121,7 +125,6 @@ $('.text').keyup(function(){
     }
     else {
         // Else hide error
-        
         $(section + '_error').html('<strong>' + count + '</strong> characters left')
         
         // Show warning when close to limit
@@ -142,15 +145,12 @@ $('.text').keyup(function(){
         // Get text location
         var location = section + '_text';
         
-        // Insert text onto badge
+        // Insert text onto preview
         $(location).html(text);
 		
 		// Make text draggable
 		$(location).css('cursor','move').draggable({ containment: "parent" });
     }
-    
-
-    
 });
 
 /*-------------------------------------------------------------------------------------------------
@@ -166,9 +166,10 @@ $('.color').change(function() {
 	// Get chosen color
 	var new_color = $(this).val();
 
-	// Get item to change
+	// Get element to change
 	var item = $(this).closest('div').attr('id');
 	
+	// Update element color
 	switch (item) {
 		case 'top':
 			$('#top_text').css('color', new_color);
@@ -196,12 +197,14 @@ $('.color').change(function() {
 			$('#preview').css('background-color', new_color);
 			break;
 	}
-
 });
 
-
+/*-------------------------------------------------------------------------------------------------
+Reset interface
+-------------------------------------------------------------------------------------------------*/
 
 $("#reset").click(function() {
+
 	// Empty Text
 	$("#text input").val("");
 	

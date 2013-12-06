@@ -4,11 +4,9 @@
 	<title>Badger - Create custom badge images for use with Mozilla Open Badges</title>
 	
 	<!-- Style -->
-	<!-- Style -->
 	<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css">
 	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
-	
 	
 	<!-- Javascript Libraries-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -55,11 +53,11 @@
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
 							<div class="col-md-6">
-								<p>Resize</p>
+								<label>Resize Icon</label>
 								<div id="resize" class="slider"></div>
 							</div>
 							<div class="col-md-6">
-								<p>Rotate</p>
+								<label>Rotate Icon</label>
 								<div id="rotate" class="slider"></div>
 							</div>
 						</div>
@@ -73,7 +71,7 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-								<p>Rotate</p>
+								<label>Rotate Top Text</label>
 								<div class="slider rotate"></div>
                             </span>
                         </div>
@@ -85,7 +83,7 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-                                <p>Rotate</p>
+                                <label>Rotate Middle Text</label>
 								<div class="slider rotate"></div>
                             </span>
                         </div>
@@ -97,7 +95,7 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-                                <p>Rotate</p>
+                                <label>Rotate Bottom Text</label>
 								<div class="slider rotate"></div>
                             </span>
                         </div>
@@ -106,7 +104,6 @@
 					
 					<!-- Color Selector-->
 					<div id="colors">
-						<form id="colors_form">
 						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
 						<div id="preview_bg" class="col-sm-7" >
 							<input id="bbgcolor" class="form-control color {hash:true}" value="ffffff"><br>
@@ -131,48 +128,32 @@
 						<div id="bottom" class="col-sm-7">
 							<input id="bottomcolor" class="form-control color {hash:true}" value="2c3e50"><br>
 						</div>
-						</form>
-						
 					</div>
 				</div>
-		</div>
+			</div>
 			
-	<!-- Badge Preview-->
-		<div class="col-md-4 ">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h2 class="panel-title">Preview</h2>
+			<!-- Badge Preview-->
+			<div class="col-md-4 ">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">Preview</h2>
+					</div>
+					<div id="preview">
+						<div id="badge" class="layer"></div>
+						<div id="icon" class="layer"></div>
+						<p id="top_text"></p>
+						<p id="mid_text"></p>
+						<p id="bottom_text"></p>
+					</div>
 				</div>
-				<div id="preview">
-					<div id="badge" class="layer"></div>
-					<div id="icon" class="layer"></div>
-					<p id="top_text"></p>
-					<p id="mid_text"></p>
-					<p id="bottom_text"></p>
-				</div>
+				<button id="preview_save" class="btn btn-primary">Save Badge</button>
+				<button id="reset" class="btn btn-danger">Reset</button>
 			</div>
-			<button id="preview_save" class="btn btn-primary">Save Badge</button>
-			<button id="reset" class="btn btn-danger">Reset</button>
-		</div>
-	
-		<div id="save_dialog" class="modal fade">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">It's a keeper!</h4>
-					</div>
-					<div class="modal-body">
-						<canvas id="canvas"></canvas>
-					</div>
-					<div class="modal-footer">
-						<button id="save_image" type="button" class="btn btn-success">Save it!</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Not Yet</button>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
+	
+	<!-- My Javascript -->
     <script src="/js/scripts.js"></script>
 </body>
 </html>
