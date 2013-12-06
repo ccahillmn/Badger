@@ -52,13 +52,15 @@
 								<?php endforeach; ?>
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
-							<div class="col-md-6">
-								<label>Resize Icon</label>
-								<div id="resize" class="slider"></div>
-							</div>
-							<div class="col-md-6">
-								<label>Rotate Icon</label>
-								<div id="rotate" class="slider"></div>
+							<div class="row clear">
+								<div class="col-md-6">
+									<label>Resize Icon</label>
+									<div id="resize" class="slider"></div>
+								</div>
+								<div class="col-md-6">
+									<label>Rotate Icon</label>
+									<div id="icon_rotate" class="slider"></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -71,7 +73,7 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-								<label>Rotate Top Text</label>
+								<label>Rotate</label>
 								<div class="slider rotate"></div>
                             </span>
                         </div>
@@ -83,7 +85,7 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-                                <label>Rotate Middle Text</label>
+                                <label>Rotate</label>
 								<div class="slider rotate"></div>
                             </span>
                         </div>
@@ -95,7 +97,7 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-                                <label>Rotate Bottom Text</label>
+                                <label>Rotate</label>
 								<div class="slider rotate"></div>
                             </span>
                         </div>

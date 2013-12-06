@@ -14,11 +14,11 @@ $(document).ready(function(){
 		circular: false,
 		infinite: false,
 		height: "auto",
+		width: "variable",
 		items: {
-			visible: 4,
-			minimum: 5,
-			width: 125,
-			height: 125
+			visible: 5,
+			width: 100,
+			height: 100
 		},
 		auto: false,
 		prev		: {
@@ -150,6 +150,10 @@ $('.text').keyup(function(){
 		
 		// Make text draggable
 		$(location).css('cursor','move').draggable({ containment: "parent" });
+		
+		// Dynamically center text
+		var margin = (256-$(section + '_text').width())/2;
+		$(section + '_text').css('left', margin);
     }
 });
 

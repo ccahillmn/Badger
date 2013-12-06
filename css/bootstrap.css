@@ -2528,8 +2528,8 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger.active,
 .open .dropdown-toggle.btn-danger {
   color: #ffffff;
-  background-color: #df2e1b;
-  border-color: #cd2a19;
+  background-color: #7c212d;
+  border-color: #7c212d;
 }
 
 .btn-danger:active,

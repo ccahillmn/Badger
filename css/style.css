@@ -2,8 +2,11 @@
 Global
 ********************************************************************/
 .clear{
-	float:none;
 	clear:both;
+}
+
+.left{
+	float:left;
 }
 
 label{
@@ -33,8 +36,21 @@ header{
 	max-width:1024px;
 }
 
+.wrapper{
+	min-width:590px;
+}
+
 #generator{
 	min-height:256px;
+}
+
+#generator:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
 }
 
 .panel{
@@ -60,25 +76,25 @@ Badge Content
 	background-size: 254px 254px;
 	width:254px;
 	height:254px;
-	position:absolute;
-	top:49px;
+	position:relative;
+	top:10px;
 	margin:auto;
 }
 
 #icon{
     width:125px;
     height:125px;
-    position:absolute;
-	top:100px;
-	left:80px;
+    position:relative;
+	top:-185px;
+	left:65px;
     z-index:99;
 }
 
 #preview p{
-    text-align:center;
     position:absolute;
     z-index:100;
 	font-size:24px;
+	text-align:center;
 }
 
 
@@ -104,8 +120,8 @@ Generator
 ********************************************************************/
 
 .thumb{
-    width:125px;
-    height:125px;
+    width:100px;
+    height:100px;
 	display:block;
 	float:left;
 	cursor:pointer;
@@ -118,6 +134,9 @@ Generator
 .picker{
 	float:left;
 	margin:20px 0;
+	max-width: 500px;       
+    height: 100px;      
+    overflow: hidden;
 }
 	
 .next, .prev{
@@ -135,13 +154,16 @@ Generator
 .slider{
 	clear:both;
 	margin:10px 0 30px 0;
+	max-width:300px;
 }
 
 #images label{
-	margin-bottom:10px;;
+	margin-bottom:10px;
 }
 
-
+span.disabled{
+	visibility:hidden;
+}
 
 
 
