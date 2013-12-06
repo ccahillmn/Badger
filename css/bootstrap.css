@@ -1842,7 +1842,7 @@ table th[class*="col-"] {
 .table > thead > tr.danger > th,
 .table > tbody > tr.danger > th,
 .table > tfoot > tr.danger > th {
-  background-color: #e74c3c;
+  background-color: #c32b40;
 }
 
 .table-hover > tbody > tr > td.danger:hover,
@@ -2201,7 +2201,7 @@ textarea.input-lg {
 
 .has-error .input-group-addon {
   color: #ffffff;
-  background-color: #e74c3c;
+  background-color: #c32b40;
   border-color: #ffffff;
 }
 
@@ -2518,8 +2518,8 @@ fieldset[disabled] .btn-warning.active {
 
 .btn-danger {
   color: #ffffff;
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #c32b40;
+  border-color: #c32b40;
 }
 
 .btn-danger:hover,
@@ -2553,8 +2553,8 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #c32b40;
+  border-color: #c32b40;
 }
 
 .btn-success {
@@ -5494,7 +5494,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .label-danger {
-  background-color: #e74c3c;
+  background-color: #c32b40;
 }
 
 .label-danger[href]:hover,
@@ -5694,8 +5694,8 @@ a.thumbnail.active {
 
 .alert-danger {
   color: #ffffff;
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #c32b40;
+  border-color: #c32b40;
 }
 
 .alert-danger hr {
@@ -5814,7 +5814,7 @@ a.thumbnail.active {
 }
 
 .progress-bar-danger {
-  background-color: #e74c3c;
+  background-color: #c32b40;
 }
 
 .progress-striped .progress-bar-danger {
@@ -6226,17 +6226,17 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-danger {
-  border-color: #e74c3c;
+  border-color: #c32b40;
 }
 
 .panel-danger > .panel-heading {
   color: #ffffff;
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #c32b40;
+  border-color: #c32b40;
 }
 
 .panel-danger > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #e74c3c;
+  border-top-color: #c32b40;
 }
 
 .panel-danger > .panel-heading > .dropdown .caret {
@@ -6244,7 +6244,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-danger > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #e74c3c;
+  border-bottom-color: #c32b40;
 }
 
 .panel-info {
@@ -7508,7 +7508,7 @@ td.visible-print {
 
 .text-danger,
 .text-danger:hover {
-  color: #e74c3c;
+  color: #c32b40;
 }
 
 .text-warning,
@@ -7582,12 +7582,12 @@ input[type="color"]:focus,
 
 .has-error .help-block,
 .has-error .control-label {
-  color: #e74c3c;
+  color: #c32b40;
 }
 
 .has-error .form-control,
 .has-error .form-control:focus {
-  border: 2px solid #e74c3c;
+  border: 2px solid #c32b40;
 }
 
 .has-success .help-block,

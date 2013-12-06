@@ -1,16 +1,23 @@
 /*-------------------------------------------------------------------------------------------------
-Image chooser
+Initialize UI
 -------------------------------------------------------------------------------------------------*/
 $(document).ready(function(){
+
+	 // intialize tabs and slider UI
+	$(function(){
+		$( ".slider" ).slider();
+		$( "#generator" ).tabs({active:0});
+	});
+		
 	$(".picker").carouFredSel({
 		circular: false,
 		infinite: false,
 		height: "auto",
 		items: {
-			visible: 5,
-			minimum: 6,
-			width: 100,
-			height: 100
+			visible: 4,
+			minimum: 5,
+			width: 125,
+			height: 125
 		},
 		auto: false,
 		prev		: {
@@ -26,7 +33,7 @@ $(document).ready(function(){
 	});
 	
 	$("#resize").slider({
-		value: 150,
+		value: 125,
 		max: 250,
 		min: 0,
 		slide: function(event, ui) {
@@ -67,6 +74,9 @@ $(document).ready(function(){
     });	
 });	
 
+/*-------------------------------------------------------------------------------------------------
+Image chooser
+-------------------------------------------------------------------------------------------------*/
 
 $('.thumb').click(function() {
 
@@ -90,8 +100,7 @@ $('.thumb').click(function() {
 	$(layer).html(new_shape);
 	$(layer + ' .shape').css('fill', fill);
 
-});
-    
+});   
 
 
 /*-------------------------------------------------------------------------------------------------
@@ -188,4 +197,27 @@ $('.color').change(function() {
 			break;
 	}
 
+});
+
+
+
+$("#reset").click(function() {
+	// Empty Text
+	$("#text input").val("");
+	
+	// Reset Sliders
+	$("#icon, #badge, #preview p").html("").css({ 
+				'WebkitTransform': 'rotate(0deg)',
+				 '-moz-transform': 'rotate(0deg)',
+				 '-ms-transform':'rotate(0deg)',
+			});
+	$("#resize").slider({value: 125});
+	$("#rotate, .rotate").slider({value: 0});
+	
+	// Reset Colors
+	document.getElementById('colors_form').reset()
+	$("#Preview p").css('color','#2C3E50');
+	$('#preview').css('background-color', '#fff');
+	badge_color = '#c32b40';
+	icon_color= '#000';
 });

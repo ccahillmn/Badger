@@ -17,15 +17,6 @@
 	<script type="text/javascript" src="/js/jscolor/jscolor.js"></script>
 	<script type="text/javascript" src="/js/jquery.carouFredSel-6.2.1-packed.js"></script> 
 	
-	<!-- jQuery UI tabs -->
-	<script>
-	  // intialize tabs and slider
-		$(function(){
-			$( ".slider" ).slider();
-			$( "#generator" ).tabs({active:0});
-		});
-	</script>
-	
 </head>
 <body>
 	<div class="container">
@@ -38,8 +29,8 @@
 				<div id="generator">
 					<ul class="nav nav-tabs">
 						<li><a href="#images">Images</a></li>
-						<li><a href="#colors">Colors</a></li>
 						<li><a href="#text">Text</a></li>
+						<li><a href="#colors">Colors</a></li>
 					</ul>
 
 					<!-- Image Selector-->
@@ -73,35 +64,6 @@
 							</div>
 						</div>
 					</div>
-					
-					<!-- Color Selector-->
-					<div id="colors">
-						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
-						<div id="preview_bg" class="col-sm-7" >
-							<input id="bbgcolor" class="form-control color {hash:true}" value="ffffff"><br>
-						</div>
-						<label for="badgecolor" class="col-sm-3 control-label">Badge</label>
-						<div id="badge_bg" class="col-sm-7">
-							<input id="badgecolor" class="form-control color {hash:true}" value="c32b40"><br>
-						</div>
-						<label for="iconcolor" class="col-sm-3 control-label">Icon</label>
-						<div id="icon_bg" class="col-sm-7">
-							<input id="iconcolor" class="form-control color {hash:true}" value="000000"><br>
-						</div>
-						<label for="topcolor" class="col-sm-3 control-label">Top Text</label>
-						<div id="top" class="col-sm-7">
-							<input id="topcolor" class="form-control color {hash:true}" value="2c3e50"><br>
-						</div>
-						<label for="midcolor" class="col-sm-3 control-label">Middle Text</label>
-						<div id="mid" class="col-sm-7">
-							<input id="midcolor" class="form-control color {hash:true}" value="2c3e50"><br>
-						</div>
-						<label for="bottomcolor" class="col-sm-3 control-label">Bottom Text</label>
-						<div id="bottom" class="col-sm-7">
-							<input id="bottomcolor" class="form-control color {hash:true}" value="2c3e50"><br>
-						</div>
-					</div>
-
                     
                     <!-- Text Selector-->
 					<div id="text">
@@ -141,6 +103,37 @@
                         </div>
                         <span id="bottom_error">24 characters left</span>
 					</div>
+					
+					<!-- Color Selector-->
+					<div id="colors">
+						<form id="colors_form">
+						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
+						<div id="preview_bg" class="col-sm-7" >
+							<input id="bbgcolor" class="form-control color {hash:true}" value="ffffff"><br>
+						</div>
+						<label for="badgecolor" class="col-sm-3 control-label">Badge</label>
+						<div id="badge_bg" class="col-sm-7">
+							<input id="badgecolor" class="form-control color {hash:true}" value="c32b40"><br>
+						</div>
+						<label for="iconcolor" class="col-sm-3 control-label">Icon</label>
+						<div id="icon_bg" class="col-sm-7">
+							<input id="iconcolor" class="form-control color {hash:true}" value="000000"><br>
+						</div>
+						<label for="topcolor" class="col-sm-3 control-label">Top Text</label>
+						<div id="top" class="col-sm-7">
+							<input id="topcolor" class="form-control color {hash:true}" value="2c3e50"><br>
+						</div>
+						<label for="midcolor" class="col-sm-3 control-label">Middle Text</label>
+						<div id="mid" class="col-sm-7">
+							<input id="midcolor" class="form-control color {hash:true}" value="2c3e50"><br>
+						</div>
+						<label for="bottomcolor" class="col-sm-3 control-label">Bottom Text</label>
+						<div id="bottom" class="col-sm-7">
+							<input id="bottomcolor" class="form-control color {hash:true}" value="2c3e50"><br>
+						</div>
+						</form>
+						
+					</div>
 				</div>
 		</div>
 			
@@ -159,6 +152,7 @@
 				</div>
 			</div>
 			<button id="preview_save" class="btn btn-primary">Save Badge</button>
+			<button id="reset" class="btn btn-danger">Reset</button>
 		</div>
 	
 		<div id="save_dialog" class="modal fade">
