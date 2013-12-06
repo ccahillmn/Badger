@@ -4,16 +4,18 @@
 	<title>Badger - Create custom badge images for use with Mozilla Open Badges</title>
 	
 	<!-- Style -->
+	<!-- Style -->
 	<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css">
 	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
 	
 	
-	<!-- Javascript -->
+	<!-- Javascript Libraries-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/jscolor/jscolor.js"></script>
-	<script type="text/javascript" src="/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script type="text/javascript" src="/js/jquery.carouFredSel-6.2.1-packed.js"></script> 
 	
 	<!-- jQuery UI tabs -->
 	<script>
@@ -40,14 +42,14 @@
 						<li><a href="#text">Text</a></li>
 					</ul>
 
-                    <!-- Image Selector-->
+					<!-- Image Selector-->
 					<div id="images">
 						<div class="wrapper">
 							<label>Badge</label><br>
 							<span class="prev glyphicon glyphicon-chevron-left"></span>
 							<div id="BadgePicker" class="picker">
 								<?php foreach(glob('./images/badges/*.*')as $filename): ?>
-										<div class="thumb badges"><?php include($filename); ?></div>
+										<div id="<?php echo($filename); ?>" class="thumb badges"><?php include($filename); ?></div>
 								<?php endforeach; ?>
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
@@ -57,7 +59,7 @@
 							<span class="prev glyphicon glyphicon-chevron-left"></span>
 							<div id="IconPicker" class="picker">
 								<?php foreach(glob('./images/icons/*.*')as $filename): ?>
-										<div class="thumb icons"><?php include($filename); ?></div>
+										<div id="<?php echo($filename); ?>" class="thumb icons"><?php include($filename); ?></div>
 								<?php endforeach; ?>
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
@@ -72,7 +74,7 @@
 						</div>
 					</div>
 					
-					<!-- Image Color Selector-->
+					<!-- Color Selector-->
 					<div id="colors">
 						<label for="bbgcolor" class="col-sm-3 control-label">Background</label>
 						<div id="preview_bg" class="col-sm-7" >
@@ -86,6 +88,18 @@
 						<div id="icon_bg" class="col-sm-7">
 							<input id="iconcolor" class="form-control color {hash:true}" value="000000"><br>
 						</div>
+						<label for="topcolor" class="col-sm-3 control-label">Top Text</label>
+						<div id="top" class="col-sm-7">
+							<input id="topcolor" class="form-control color {hash:true}" value="2c3e50"><br>
+						</div>
+						<label for="midcolor" class="col-sm-3 control-label">Middle Text</label>
+						<div id="mid" class="col-sm-7">
+							<input id="midcolor" class="form-control color {hash:true}" value="2c3e50"><br>
+						</div>
+						<label for="bottomcolor" class="col-sm-3 control-label">Bottom Text</label>
+						<div id="bottom" class="col-sm-7">
+							<input id="bottomcolor" class="form-control color {hash:true}" value="2c3e50"><br>
+						</div>
 					</div>
 
                     
@@ -97,7 +111,8 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-                                <input class="color {hash:true,caps:false}" value="2c3e50">
+								<p>Rotate</p>
+								<div class="slider rotate"></div>
                             </span>
                         </div>
                         <span id="top_error">24 characters left</span>
@@ -108,7 +123,8 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-                                <input class="color {hash:true,caps:false}" value="2c3e50">
+                                <p>Rotate</p>
+								<div class="slider rotate"></div>
                             </span>
                         </div>
                         <span id="mid_error">24 characters left</span>
@@ -119,7 +135,8 @@
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
-                                <input class="color {hash:true,caps:false}" value="2c3e50">
+                                <p>Rotate</p>
+								<div class="slider rotate"></div>
                             </span>
                         </div>
                         <span id="bottom_error">24 characters left</span>
@@ -127,18 +144,36 @@
 				</div>
 		</div>
 			
-			<!-- Badge Preview-->
-			<div class="col-md-4 ">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h2 class="panel-title">Preview</h2>
+	<!-- Badge Preview-->
+		<div class="col-md-4 ">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h2 class="panel-title">Preview</h2>
+				</div>
+				<div id="preview">
+					<div id="badge" class="layer"></div>
+					<div id="icon" class="layer"></div>
+					<p id="top_text"></p>
+					<p id="mid_text"></p>
+					<p id="bottom_text"></p>
+				</div>
+			</div>
+			<button id="preview_save" class="btn btn-primary">Save Badge</button>
+		</div>
+	
+		<div id="save_dialog" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">It's a keeper!</h4>
 					</div>
-					<div id="preview">
-						<div id="badge" class="layer"></div>
-						<div id="icon" class="layer"></div>
-						<p id="top_text"></p>
-						<p id="mid_text"></p>
-						<p id="bottom_text"></p>
+					<div class="modal-body">
+						<canvas id="canvas"></canvas>
+					</div>
+					<div class="modal-footer">
+						<button id="save_image" type="button" class="btn btn-success">Save it!</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Not Yet</button>
 					</div>
 				</div>
 			</div>

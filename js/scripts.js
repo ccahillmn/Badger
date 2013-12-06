@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------------------------------------------
 Image chooser
 -------------------------------------------------------------------------------------------------*/
-$( document ).ready(function() {
+$(document).ready(function(){
 	$(".picker").carouFredSel({
 		circular: false,
 		infinite: false,
@@ -48,7 +48,24 @@ $( document ).ready(function() {
 		}
 	});
 	
-});
+    $( ".rotate").each(function() {
+	
+		var item = $(this).closest('div.row').attr('id');
+		
+		$( this ).slider({
+			value: 0,
+			max: 180,
+			min: -180,
+			slide: function(event, ui) {
+				$("#" + item + "_text").css({ 
+					'WebkitTransform': 'rotate(' + ui.value + 'deg)',
+					 '-moz-transform': 'rotate(' + ui.value + 'deg)',
+					 '-ms-transform':'rotate('+ ui.value +'deg)',
+				});
+			}
+		});
+    });	
+});	
 
 
 $('.thumb').click(function() {
@@ -119,6 +136,7 @@ $('.text').keyup(function(){
         // Insert text onto badge
         $(location).html(text);
 		
+		// Make text draggable
 		$(location).css('cursor','move').draggable({ containment: "parent" });
     }
     
