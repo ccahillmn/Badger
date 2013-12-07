@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Badger - Create custom badge images for use with Mozilla Open Badges</title>
+	<title>Badger - Create custom badge images</title>
 	
 	<!-- Style -->
 	<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css">
@@ -20,7 +20,7 @@
 	<div class="container">
 		<header>
 			<h1>Badger the Badge Maker<img id="logo" alt="Badger Badge Logo" src="/images/logo.png"></h1>
-			<p id="desc">Create badge images perfectly sized for Mozilla Open Badges<p>
+			<p id="desc">Gamify your classroom or business with custom badges<p>
 		</header>
 		<div class="row">
 			<div class="col-md-8">
@@ -167,7 +167,7 @@
 						<p id="bottom_text"></p>
 					</div>
 				</div>
-				<button id="preview_save" class="btn btn-primary">Save Badge</button>
+				<button id="save" class="btn btn-primary">Save Badge</button>
 				<button id="reset" class="btn btn-danger">Reset</button>
 			</div>
 			

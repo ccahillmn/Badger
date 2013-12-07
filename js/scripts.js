@@ -265,3 +265,32 @@ $("#reset").click(function() {
         $(this).css('color',textColor);
 	});
 });
+
+/*-------------------------------------------------------------------------------------------------
+Reset interface
+-------------------------------------------------------------------------------------------------*/
+
+$('#save').click(function() {
+	
+    var badge_clone = $('#preview').clone();
+        
+    var badge = badge_clone.prop('outerHTML'); 
+    	    
+    var new_tab_contents  = '<html>';
+    new_tab_contents += '<head>';
+    new_tab_contents += '<link rel="stylesheet" href="css/boostrap.css" type="text/css">'; // Don't forget your CSS so the card looks good in the new tab!
+    new_tab_contents += '<link rel="stylesheet" href="css/style.css" type="text/css">';
+    new_tab_contents += '</head>';
+    new_tab_contents += '<body>'; 
+    new_tab_contents += badge; 
+    new_tab_contents += '</body></html>';
+    
+    var new_tab =  window.open();
+
+    new_tab.document.open();
+    
+    new_tab.document.write(new_tab_contents);
+    
+    new_tab.document.close();
+    		
+});
