@@ -38,7 +38,7 @@
 							<span class="prev glyphicon glyphicon-chevron-left"></span>
 							<div id="BadgePicker" class="picker">
 								<?php foreach(glob('./images/badges/*.*')as $filename): ?>
-										<div id="<?php echo($filename); ?>" class="thumb badges"><?php include($filename); ?></div>
+										<div class="thumb badges"><?php include($filename); ?></div>
 								<?php endforeach; ?>
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
@@ -48,7 +48,7 @@
 							<span class="prev glyphicon glyphicon-chevron-left"></span>
 							<div id="IconPicker" class="picker">
 								<?php foreach(glob('./images/icons/*.*')as $filename): ?>
-										<div id="<?php echo($filename); ?>" class="thumb icons"><?php include($filename); ?></div>
+										<div class="thumb icons"><?php include($filename); ?></div>
 								<?php endforeach; ?>
 							</div>
 							<span class="next glyphicon glyphicon-chevron-right"></span>
@@ -87,38 +87,38 @@
                         </div>
                         <hr>
                         <div id="top" class="row">
-                            <span class="col-md-5">
+                            <div class="col-md-5">
                                 <label class="control-label">Top Text</label>
                                 <input class="form-control text" placeholder="Type your text here...">
-                            </span>
-                            <span class="col-md-7">
+                            </div>
+                            <div class="col-md-7">
 								<label>Rotate</label>
 								<div class="slider rotate"></div>
-                            </span>
+                            </div>
                         </div>
                         <span id="top_error">24 characters left</span>
                         <hr>
                         <div id="mid" class="row">
-                            <span class="col-md-5">
+                            <div class="col-md-5">
                                 <label class="control-label">Middle Text</label>
                                 <input class="form-control text" placeholder="Type your text here...">
-                            </span>
-                            <span class="col-md-7">
+                            </div>
+                            <div class="col-md-7">
                                 <label>Rotate</label>
 								<div class="slider rotate"></div>
-                            </span>
+                            </div>
                         </div>
                         <span id="mid_error">24 characters left</span>
                         <hr>
                         <div id="bottom" class="row">
-                            <span class="col-md-5">
+                            <div class="col-md-5">
                                 <label class="control-label">Bottom Text</label>
                                 <input class="form-control text" placeholder="Type your text here...">
-                            </span>
-                            <span class="col-md-7">
+                            </div>
+                            <div class="col-md-7">
                                 <label>Rotate</label>
 								<div class="slider rotate"></div>
-                            </span>
+                            </div>
                         </div>
                         <span id="bottom_error">24 characters left</span>
 					</div>
@@ -138,15 +138,15 @@
 							<input id="iconcolor" class="form-control color {hash:true}" value="000000"><br>
 						</div>
 						<label for="topcolor" class="col-sm-3 control-label">Top Text</label>
-						<div id="top" class="col-sm-7">
+						<div id="top_color" class="col-sm-7">
 							<input id="topcolor" class="form-control color {hash:true}" value="2c3e50"><br>
 						</div>
 						<label for="midcolor" class="col-sm-3 control-label">Middle Text</label>
-						<div id="mid" class="col-sm-7">
+						<div id="mid_color" class="col-sm-7">
 							<input id="midcolor" class="form-control color {hash:true}" value="2c3e50"><br>
 						</div>
 						<label for="bottomcolor" class="col-sm-3 control-label">Bottom Text</label>
-						<div id="bottom" class="col-sm-7">
+						<div id="bottom_color" class="col-sm-7">
 							<input id="bottomcolor" class="form-control color {hash:true}" value="2c3e50"><br>
 						</div>
 					</div>

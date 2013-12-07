@@ -4274,12 +4274,22 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   padding: 10px 15px;
+  position:relative;
+  top:3px;
 }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #cfd0d1;
+  background-color: #18bc9c;
+  color:#fff;
+  border:none;
+}
+
+.nav > li.ui-state-active > a:hover{
+	background-color:#fff;
+	color:#18bc9c;
+	border:none;
 }
 
 .nav > li.disabled > a {

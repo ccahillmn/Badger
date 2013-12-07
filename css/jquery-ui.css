@@ -267,9 +267,9 @@
 #generator > div .ui-widget-content .ui-state-focus,
 .  .ui-state-focus {
 	border: 1px solid #79b7e7;
-	background: #d0e5f5 url(images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x;
+	background: #18bc9c;
 	font-weight: bold;
-	color: #1d5987;
+	color: #fff;
 }
 #generator > div .ui-state-hover a,
 #generator > div .ui-state-hover a:hover,
@@ -282,9 +282,9 @@
 #generator > div .ui-widget-content #generator > div .ui-state-active,
 .  #generator > div .ui-state-active {
 	border: 1px solid #79b7e7;
-	background: #f5f8f9 url(images/ui-bg_inset-hard_100_f5f8f9_1x100.png) 50% 50% repeat-x;
+	background: #18bc9c;
 	font-weight: bold;
-	color: #e17009;
+	color: #fff;
 }
 #generator > div .ui-state-active a,
 #generator > div .ui-state-active a:link,

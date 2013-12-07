@@ -114,7 +114,7 @@ $('.text').keyup(function(){
     
     // Get user input
 	var text = $(this).val();
-    var section = '#' + $(this).closest('div').attr('id');
+    var section = '#' + $(this).closest('div.row').attr('id');
     var length = text.length;
     var count = 20-length;
     
@@ -186,15 +186,15 @@ $('.color').change(function() {
 	
 	// Update element color
 	switch (item) {
-		case 'top':
+		case 'top_color':
 			$('#top_text').css('color', new_color);
 			break;
 		
-		case 'mid':
+		case 'mid_color':
 			$('#mid_text').css('color', new_color);
 			break;
 		
-		case 'bottom':
+		case 'bottom_color':
 			$('#bottom_text').css('color', new_color);
 			break;
 		
@@ -272,10 +272,11 @@ Reset interface
 
 $('#save').click(function() {
 	
+	// Get preview image html
     var badge_clone = $('#preview').clone();
-        
     var badge = badge_clone.prop('outerHTML'); 
-    	    
+    
+	// Combine preview html with css
     var new_tab_contents  = '<html>';
     new_tab_contents += '<head>';
     new_tab_contents += '<link rel="stylesheet" href="css/boostrap.css" type="text/css">'; // Don't forget your CSS so the card looks good in the new tab!
@@ -285,12 +286,14 @@ $('#save').click(function() {
     new_tab_contents += badge; 
     new_tab_contents += '</body></html>';
     
+	// Open new tab
     var new_tab =  window.open();
-
     new_tab.document.open();
     
+	// Render badge in new tab
     new_tab.document.write(new_tab_contents);
-    
+
     new_tab.document.close();
+
     		
 });
