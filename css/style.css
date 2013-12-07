@@ -26,6 +26,11 @@ label{
 	margin-right: 20px;
 }
 
+label, .ui-tabs-anchor, .panel-heading h2{
+    font-family:"Oswald";
+    font-size:1.2em;
+}
+
 hr{
 	padding:0;
 }
@@ -48,7 +53,7 @@ header{
 }
 
 #generator{
-	min-height:256px;
+	min-height:600px;
 }
 
 #generator:after {

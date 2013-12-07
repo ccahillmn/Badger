@@ -34,7 +34,7 @@
 					<!-- Image Selector-->
 					<div id="images">
 						<div class="wrapper">
-							<label>Badge</label><br>
+							<label>Select Badge</label><br>
 							<span class="prev glyphicon glyphicon-chevron-left"></span>
 							<div id="BadgePicker" class="picker">
 								<?php foreach(glob('./images/badges/*.*')as $filename): ?>
@@ -44,7 +44,7 @@
 							<span class="next glyphicon glyphicon-chevron-right"></span>
 						</div>
 						<div class="wrapper clear">
-							<label>Icon</label><br>
+							<label>Select Icon</label><br>
 							<span class="prev glyphicon glyphicon-chevron-left"></span>
 							<div id="IconPicker" class="picker">
 								<?php foreach(glob('./images/icons/*.*')as $filename): ?>
@@ -71,7 +71,7 @@
 					        <div class="form-group">
                                 <label for="font" class="col-sm-3 control-label">Select font:</label>
                                 <div class="col-sm-9">
-            					    <select id="font" form-control input-lg>
+            					    <select id="font" class="form-control">
                                         <option>Arial</option>
                                         <option selected="selected">Arvo</option>
                                         <option>Coming Soon</option>
