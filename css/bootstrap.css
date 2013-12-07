@@ -4278,12 +4278,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
   top:3px;
 }
 
-.nav > li > a:hover,
-.nav > li > a:focus {
+.nav > li > a:hover {
   text-decoration: none;
   background-color: #18bc9c;
   color:#fff;
   border:none;
+  position:relative;
+  top:3px;
 }
 
 .nav > li.ui-state-active > a:hover{

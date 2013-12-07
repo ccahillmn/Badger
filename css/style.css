@@ -73,6 +73,7 @@ header{
 	width:254px;
 	height:276px;
 	border-radius:0 0 4px 4px;
+	overflow:hidden;
 }
 
 #generator > div{
