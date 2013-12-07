@@ -63,7 +63,7 @@ $(document).ready(function(){
 	
 		var item = $(this).closest('div.row').attr('id');
 		
-		$( this ).slider({
+		$(this).slider({
 			value: 0,
 			max: 180,
 			min: -180,
@@ -76,6 +76,10 @@ $(document).ready(function(){
 			}
 		});
     });	
+    
+    $('#font option').each(function(){
+       $(this).css('font-family',$(this).val()); 
+    });
 });	
 
 /*-------------------------------------------------------------------------------------------------
@@ -116,10 +120,10 @@ $('.text').keyup(function(){
 	var text = $(this).val();
     var section = '#' + $(this).closest('div').attr('id');
     var length = text.length;
-    var count = 24-length;
+    var count = 20-length;
     
     // Show error if too long
-    if (length >= 25){
+    if (length >= 21){
         $(section).addClass('has-error').removeClass('has-warning');
         $(section + '_error').html('<strong>' + count + '</strong> Your text is too long').addClass('text-danger').removeClass('text-warning');
     }
@@ -128,13 +132,13 @@ $('.text').keyup(function(){
         $(section + '_error').html('<strong>' + count + '</strong> characters left')
         
         // Show warning when close to limit
-        if(length > 19){
+        if(length > 15){
             $(section).addClass('has-warning').removeClass('has-error');
             $(section + '_error').addClass('text-warning').removeClass('text-danger');
             
             $(this).blur(function() {
-                $(section).removeClass('has-warning has-error');
-                $(section + '_error').removeClass('text-warning text-danger');
+                $(section).removeClass('has-warning');
+                $(section + '_error').removeClass('text-warning');
             });
         }
         else{
@@ -152,10 +156,21 @@ $('.text').keyup(function(){
 		$(location).css('cursor','move').draggable({ containment: "parent" });
 		
 		// Dynamically center text
-		var margin = (256-$(section + '_text').width())/2;
+		var margin = (290-$(section + '_text').width())/2;
 		$(section + '_text').css('left', margin);
     }
 });
+
+$('select').change(function() {
+
+    // Get selected font
+    var fontName = $(this).val();
+    
+    // Change text font
+    $('#preview p').css('font-family',"'" + fontName + "'");
+    
+});
+    
 
 /*-------------------------------------------------------------------------------------------------
 Color chooser
@@ -209,8 +224,10 @@ Reset interface
 
 $("#reset").click(function() {
 
-	// Empty Text
+	// Reset Text
 	$("#text input").val("");
+	$("#preview p").css('font-family','Arvo')
+	$("#font").val("Arvo");
 	
 	// Reset Sliders
 	$("#icon, #badge, #preview p").html("").css({ 

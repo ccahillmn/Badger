@@ -19,7 +19,7 @@
 <body>
 	<div class="container">
 		<header>
-			<h1>Badger the Badge Maker<img id="logo" src="/images/logo.png"></h1>
+			<h1>Badger the Badge Maker<img id="logo" alt="Badger Badge Logo" src="/images/logo.png"></h1>
 			<p id="desc">Create badge images perfectly sized for Mozilla Open Badges<p>
 		</header>
 		<div class="row">
@@ -67,9 +67,28 @@
                     
                     <!-- Text Selector-->
 					<div id="text">
-                        <label class="control-label">Top Text</label>
+					    <div class="row">
+					        <div class="form-group">
+                                <label for="font" class="col-sm-3 control-label">Select font:</label>
+                                <div class="col-sm-9">
+            					    <select id="font" form-control input-lg>
+                                        <option>Arial</option>
+                                        <option selected="selected">Arvo</option>
+                                        <option>Coming Soon</option>
+                                        <option>Lobster</option>
+                                        <option>Oswald</option>
+                                        <option>Pacifico</option>
+                                        <option>Special Elite</option>
+                                        <option>Tahoma</option>
+                                        <option>Times New Roman</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
                         <div id="top" class="row">
                             <span class="col-md-5">
+                                <label class="control-label">Top Text</label>
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
@@ -79,9 +98,9 @@
                         </div>
                         <span id="top_error">24 characters left</span>
                         <hr>
-						<label class="control-label">Middle Text</label>
                         <div id="mid" class="row">
                             <span class="col-md-5">
+                                <label class="control-label">Middle Text</label>
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">
@@ -91,9 +110,9 @@
                         </div>
                         <span id="mid_error">24 characters left</span>
                         <hr>
-						<label class="control-label">Bottom Text</label>
                         <div id="bottom" class="row">
                             <span class="col-md-5">
+                                <label class="control-label">Bottom Text</label>
                                 <input class="form-control text" placeholder="Type your text here...">
                             </span>
                             <span class="col-md-7">

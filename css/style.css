@@ -1,6 +1,10 @@
 /********************************************************************
 Global
 ********************************************************************/
+
+@import url(//fonts.googleapis.com/css?family=Arvo|Lobster|Oswald|Pacifico|Coming+Soon|Special+Elite);
+
+
 .clear{
 	clear:both;
 }
@@ -10,8 +14,11 @@ Global
 }
 
 label{
-	text-align:right;
 	font-size:1.25em;
+}
+
+#colors label{
+    text-align:right;
 }
 
 #logo{
@@ -93,8 +100,11 @@ Badge Content
 #preview p{
     position:absolute;
     z-index:100;
+    font-family:'Arvo';
 	font-size:24px;
 	text-align:center;
+	max-width:254px;
+	overflow:hidden;
 }
 
 
