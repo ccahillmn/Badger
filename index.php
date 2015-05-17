@@ -4,22 +4,22 @@
 	<title>Badger - Create custom badge images</title>
 	
 	<!-- Style -->
-	<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css">
-	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
-	<link rel="stylesheet" href="/css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 	
 	<!-- Javascript Libraries-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/jscolor/jscolor.js"></script>
-	<script type="text/javascript" src="/js/jquery.carouFredSel-6.2.1-packed.js"></script> 
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jscolor/jscolor.js"></script>
+	<script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script> 
 	
 </head>
 <body>
 	<div class="container">
 		<header>
-			<h1>Badger the Badge Maker<img id="logo" alt="Badger Badge Logo" src="/images/logo.png"></h1>
+			<h1>Badger the Badge Maker<img id="logo" alt="Badger Badge Logo" src="images/logo.png"></h1>
 			<p id="desc">Gamify your classroom or business with custom badges<p>
 		</header>
 		<div class="row">
@@ -175,6 +175,6 @@
 	</div>
 	
 	<!-- My Javascript -->
-    <script src="/js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
